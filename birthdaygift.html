@@ -1,0 +1,2012 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="theme-color" content="#FFF3F6">
+
+<title>Birthday Gifts 🤍</title>
+
+<style>
+
+/* =========================
+   BASIC
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    width:100%;
+    min-height:100%;
+}
+
+body{
+
+    background:#000;
+
+    color:#fff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    overflow:hidden;
+}
+
+
+/* =========================
+   BACKGROUND GLOW
+========================= */
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    width:650px;
+    height:650px;
+
+    left:50%;
+    top:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.08),
+            transparent 68%
+        );
+
+    pointer-events:none;
+
+    z-index:0;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.page{
+
+    position:relative;
+
+    width:100%;
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:35px 20px;
+
+    z-index:2;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.top-text{
+
+    text-align:center;
+
+    margin-bottom:42px;
+
+    animation:
+        titleIn
+        1.2s
+        ease
+        forwards;
+}
+
+
+.top-small{
+
+    color:#7A4A63;
+
+    font-size:10px;
+
+    letter-spacing:5px;
+
+    margin-bottom:13px;
+}
+
+
+.top-text h1{
+
+    font-size:
+        clamp(28px,5vw,48px);
+
+    font-weight:300;
+
+    letter-spacing:6px;
+}
+
+
+.top-line{
+
+    width:80px;
+
+    height:1px;
+
+    background:#fff;
+
+    margin:17px auto 0;
+}
+
+
+@keyframes titleIn{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(-25px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* =========================
+   GIFT GRID
+========================= */
+
+.gift-grid{
+
+    width:100%;
+
+    max-width:850px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:42px 55px;
+
+    justify-items:center;
+}
+
+
+/* =========================
+   GIFT ITEM
+========================= */
+
+.gift-item{
+
+    position:relative;
+
+    width:145px;
+
+    height:155px;
+
+    display:flex;
+
+    align-items:flex-end;
+
+    justify-content:center;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+}
+
+
+.gift-item:hover{
+
+    transform:
+        translateY(-7px);
+}
+
+
+/* =========================
+   GIFT BOX
+========================= */
+
+.gift-box{
+
+    position:relative;
+
+    width:120px;
+
+    height:100px;
+
+    background:var(--gift-color);
+
+    border-radius:5px;
+
+    box-shadow:
+
+        0 12px 30px
+        rgba(0,0,0,.7),
+
+        inset 0 0 0 1px
+        rgba(255,255,255,.3);
+
+    transition:
+        transform .5s ease;
+}
+
+
+/* =========================
+   VERTICAL RIBBON
+========================= */
+
+.ribbon-vertical{
+
+    position:absolute;
+
+    left:50%;
+
+    top:0;
+
+    transform:
+        translateX(-50%);
+
+    width:20px;
+
+    height:100%;
+
+    background:
+        rgba(255,255,255,.75);
+}
+
+
+/* =========================
+   HORIZONTAL RIBBON
+========================= */
+
+.ribbon-horizontal{
+
+    position:absolute;
+
+    left:0;
+
+    top:38px;
+
+    width:100%;
+
+    height:18px;
+
+    background:
+        rgba(255,255,255,.75);
+}
+
+
+/* =========================
+   GIFT LID
+========================= */
+
+.gift-lid{
+
+    position:absolute;
+
+    left:-7px;
+
+    top:-15px;
+
+    width:134px;
+
+    height:28px;
+
+    background:var(--gift-color);
+
+    border-radius:5px;
+
+    box-shadow:
+
+        0 5px 12px
+        rgba(0,0,0,.5);
+
+    transition:
+
+        transform .65s
+        cubic-bezier(.22,.61,.36,1);
+}
+
+
+.lid-ribbon{
+
+    position:absolute;
+
+    left:50%;
+
+    top:0;
+
+    transform:
+        translateX(-50%);
+
+    width:20px;
+
+    height:100%;
+
+    background:
+        rgba(255,255,255,.75);
+}
+
+
+/* =========================
+   BOW
+========================= */
+
+.bow{
+
+    position:absolute;
+
+    top:-24px;
+
+    left:50%;
+
+    width:40px;
+
+    height:25px;
+
+    transform:
+        translateX(-50%);
+
+    z-index:5;
+}
+
+
+.bow-left,
+.bow-right{
+
+    position:absolute;
+
+    width:22px;
+
+    height:17px;
+
+    border:4px solid #fff;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,255,255,.08);
+}
+
+
+.bow-left{
+
+    left:-4px;
+
+    transform:
+        rotate(-25deg);
+}
+
+
+.bow-right{
+
+    right:-4px;
+
+    transform:
+        rotate(25deg);
+}
+
+
+.bow-center{
+
+    position:absolute;
+
+    left:50%;
+
+    top:5px;
+
+    width:12px;
+
+    height:12px;
+
+    transform:
+        translateX(-50%);
+
+    border-radius:50%;
+
+    background:#fff;
+
+    z-index:3;
+}
+
+
+/* =========================
+   NUMBER
+========================= */
+
+.gift-number{
+
+    position:absolute;
+
+    bottom:-29px;
+
+    left:0;
+
+    width:100%;
+
+    text-align:center;
+
+    color:#7A4A63;
+
+    font-size:10px;
+
+    letter-spacing:3px;
+}
+
+
+/* =========================
+   COLORFUL PAPER
+========================= */
+
+.paper{
+
+    position:absolute;
+
+    left:50%;
+
+    top:45px;
+
+    width:12px;
+
+    height:20px;
+
+    opacity:0;
+
+    z-index:15;
+
+    pointer-events:none;
+
+    border-radius:2px;
+}
+
+
+/* =========================
+   SPARKLE STARS
+========================= */
+
+.sparkle,
+.star-burst{
+
+    position:absolute;
+
+    left:50%;
+
+    top:30px;
+
+    width:10px;
+
+    height:10px;
+
+    color:#fff;
+
+    opacity:0;
+
+    z-index:16;
+
+    pointer-events:none;
+
+    font-size:18px;
+
+    line-height:1;
+
+    text-shadow:
+
+        0 0 6px #fff,
+        0 0 15px #fff;
+}
+
+
+/* =========================
+   2 SECOND PAPER BURST
+========================= */
+
+.gift-item.burst .paper{
+
+    animation:
+        colorfulPaperBurst
+        2s
+        ease-out
+        forwards;
+}
+
+
+@keyframes colorfulPaperBurst{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+            translate(-50%,0)
+            scale(.2)
+            rotate(0deg);
+    }
+
+    10%{
+
+        opacity:1;
+    }
+
+    45%{
+
+        opacity:1;
+
+        transform:
+            translate(
+                calc(-50% + var(--paper-x)),
+                var(--paper-y)
+            )
+            rotate(var(--paper-r))
+            scale(1);
+    }
+
+    75%{
+
+        opacity:1;
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+            translate(
+                calc(-50% + var(--paper-x)),
+                calc(var(--paper-y) + 70px)
+            )
+            rotate(
+                calc(var(--paper-r) + 180deg)
+            )
+            scale(.7);
+    }
+}
+
+
+/* =========================
+   STAR BURST
+========================= */
+
+.gift-item.burst .sparkle,
+.gift-item.burst .star-burst{
+
+    animation:
+        starBurst
+        2s
+        ease-out
+        forwards;
+}
+
+
+@keyframes starBurst{
+
+    0%{
+
+        opacity:0;
+
+        transform:
+            translate(-50%,0)
+            scale(.1)
+            rotate(0deg);
+    }
+
+    15%{
+
+        opacity:1;
+
+        transform:
+            translate(
+                calc(-50% + var(--star-x) * .25),
+                calc(var(--star-y) * .25)
+            )
+            scale(1.5)
+            rotate(45deg);
+    }
+
+    55%{
+
+        opacity:1;
+
+        transform:
+            translate(
+                calc(-50% + var(--star-x) * .75),
+                calc(var(--star-y) * .75)
+            )
+            scale(1.1)
+            rotate(180deg);
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+            translate(
+                calc(-50% + var(--star-x)),
+                var(--star-y)
+            )
+            scale(.2)
+            rotate(360deg);
+    }
+}
+
+
+/* =========================
+   OPEN STATE
+========================= */
+
+.gift-item.open{
+
+    transform:
+        translateY(-5px);
+}
+
+
+.gift-item.open .gift-lid{
+
+    transform:
+        translateY(-75px)
+        rotate(-8deg);
+}
+
+
+.gift-item.open .gift-box{
+
+    transform:
+        scale(1.03);
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.gift-message{
+
+    position:absolute;
+
+    left:50%;
+
+    top:-70px;
+
+    width:220px;
+
+    transform:
+        translateX(-50%)
+        translateY(15px)
+        scale(.8);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    padding:12px 16px;
+
+    background:#4A1F3A;
+
+    border:1px solid #7A4A63;
+
+    border-radius:12px;
+
+    text-align:center;
+
+    color:#fff;
+
+    font-size:12px;
+
+    line-height:1.5;
+
+    box-shadow:
+        0 10px 30px
+        rgba(0,0,0,.7);
+
+    transition:.5s ease;
+
+    z-index:40;
+}
+
+
+/* =========================
+   MESSAGE AFTER 2 SECONDS
+========================= */
+
+.gift-item.show-message .gift-message{
+
+    opacity:1;
+
+    transform:
+        translateX(-50%)
+        translateY(0)
+        scale(1);
+
+    pointer-events:auto;
+
+    cursor:pointer;
+}
+
+
+/* =========================
+   MESSAGE HOVER
+========================= */
+
+.gift-item.show-message .gift-message:hover{
+
+    border-color:#fff;
+
+    transform:
+        translateX(-50%)
+        translateY(-2px)
+        scale(1.03);
+}
+
+
+/* =========================
+   MESSAGE ARROW
+========================= */
+
+.gift-message::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:-7px;
+
+    width:12px;
+
+    height:12px;
+
+    background:#4A1F3A;
+
+    border-right:1px solid #7A4A63;
+
+    border-bottom:1px solid #7A4A63;
+
+    transform:
+        translateX(-50%)
+        rotate(45deg);
+}
+
+
+/* =========================
+   BOTTOM TEXT
+========================= */
+
+.bottom-text{
+
+    margin-top:55px;
+
+    color:#7A4A63;
+
+    font-size:9px;
+
+    letter-spacing:4px;
+
+    text-align:center;
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-btn{
+
+    position:fixed;
+
+    left:22px;
+
+    bottom:22px;
+
+    padding:8px 14px;
+
+    background:transparent;
+
+    color:#7A4A63;
+
+    border:1px solid #4A1F3A;
+
+    border-radius:18px;
+
+    font-size:9px;
+
+    letter-spacing:2px;
+
+    cursor:pointer;
+
+    transition:.3s ease;
+
+    z-index:50;
+}
+
+
+.back-btn:hover{
+
+    color:#fff;
+
+    border-color:#fff;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+    body{
+
+        overflow:auto;
+    }
+
+
+    .page{
+
+        min-height:100vh;
+
+        padding:
+            35px
+            12px
+            75px;
+
+        justify-content:
+            flex-start;
+    }
+
+
+    .top-text{
+
+        margin-top:15px;
+
+        margin-bottom:45px;
+    }
+
+
+    .top-text h1{
+
+        font-size:28px;
+
+        letter-spacing:4px;
+    }
+
+
+    .gift-grid{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap:55px 20px;
+
+        max-width:400px;
+    }
+
+
+    .gift-item{
+
+        width:135px;
+
+        height:145px;
+    }
+
+
+    .gift-box{
+
+        width:110px;
+
+        height:92px;
+    }
+
+
+    .gift-lid{
+
+        width:124px;
+    }
+
+
+    .gift-message{
+
+        width:190px;
+
+        font-size:11px;
+    }
+
+
+    .bottom-text{
+
+        margin-top:45px;
+
+        margin-bottom:20px;
+    }
+
+}
+
+
+/* =========================
+   6 GIFT COLORS
+========================= */
+
+.gift-1{
+    --gift-color:#E63973;
+}
+
+.gift-2{
+    --gift-color:#7C4DFF;
+}
+
+.gift-3{
+    --gift-color:#F48FB1;
+}
+
+.gift-4{
+    --gift-color:#B77DDE;
+}
+
+.gift-5{
+    --gift-color:#3FAF75;
+}
+
+.gift-6{
+    --gift-color:#E05A7A;
+}
+
+</style>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* LOVE-OVERRIDE */
+
+html,body{background:#FFF3F6}
+
+body{
+    background:
+        radial-gradient(
+            ellipse at 18% 8%,
+            rgba(236,95,140,.34),
+            transparent 55%
+        ),
+        radial-gradient(
+            ellipse at 85% 95%,
+            rgba(255,160,185,.5),
+            transparent 55%
+        ),
+        #FFF3F6 fixed!important;
+
+    color:#4A1F3A!important;
+
+    font-family:
+        Manrope,
+        Arial,
+        sans-serif!important
+}
+
+body::before{
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,160,190,.14),
+            transparent 68%
+        )!important
+}
+
+.top-small{
+    color:#E0527F!important;
+    font-weight:500
+}
+
+.top-text h1{
+    font-family:
+        'Cormorant Garamond',
+        Georgia,
+        serif!important;
+
+    font-weight:600!important;
+
+    letter-spacing:1.5px!important;
+
+    font-size:
+        clamp(30px,8.6vw,54px)!important;
+
+    line-height:1.15!important;
+
+    color:#4A1F3A;
+
+    text-shadow:
+        0 0 15px rgba(255,160,190,.55)
+}
+
+.top-line{
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            #E0527F,
+            transparent
+        )!important;
+
+    height:2px!important;
+
+    width:120px!important
+}
+
+.gift-box,.gift-lid{
+    box-shadow:
+        0 0 18px rgba(236,95,140,.5),
+        0 12px 26px rgba(0,0,0,.7),
+        inset 0 0 0 1px rgba(255,255,255,.25)!important
+}
+
+.ribbon-vertical,
+.ribbon-horizontal,
+.lid-ribbon{
+    background:
+        rgba(255,247,242,.88)!important
+}
+
+.gift-number{
+    color:#E0527F!important;
+    font-weight:500
+}
+
+.gift-message{
+    background:#FFFFFF!important;
+    border:1px solid #EC5F8C!important;
+    color:#A8559B!important;
+    font-weight:500;
+
+    box-shadow:
+        0 0 20px rgba(236,95,140,.5),
+        0 12px 26px rgba(0,0,0,.6)!important
+}
+
+.gift-message::after{
+    background:#FFFFFF!important;
+    border-right:1px solid #EC5F8C!important;
+    border-bottom:1px solid #EC5F8C!important
+}
+
+.gift-item.show-message .gift-message:hover{
+    border-color:#E0527F!important
+}
+
+.sparkle,
+.star-burst{
+    color:#E0A63D!important;
+
+    text-shadow:
+        0 0 6px #FFF7F2,
+        0 0 14px #FFB6CB!important
+}
+
+.bottom-text{
+    color:#7A4A63!important;
+    opacity:.75
+}
+
+.back-btn{
+    display:none!important
+}
+
+html{
+    -webkit-text-size-adjust:100%;
+    -webkit-tap-highlight-color:transparent
+}
+
+.page{
+    min-height:100vh;
+    min-height:100dvh;
+    padding-bottom:130px!important
+}
+
+/* ONLY GIFT COLORS CHANGED */
+
+.gift-1{--gift-color:#E63973}
+.gift-2{--gift-color:#7C4DFF}
+.gift-3{--gift-color:#F48FB1}
+.gift-4{--gift-color:#B77DDE}
+.gift-5{--gift-color:#3FAF75}
+.gift-6{--gift-color:#E05A7A}
+
+.fh{
+    position:fixed;
+    bottom:-30px;
+    opacity:.75;
+    text-shadow:0 0 15px #FFB6CB;
+    animation:fhup linear forwards;
+    pointer-events:none;
+    z-index:1
+}
+
+@keyframes fhup{
+    to{
+        transform:
+            translateY(-115vh)
+            rotate(25deg);
+        opacity:0
+    }
+}
+
+</style>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="cute.css"></head>
+
+<body>
+
+<div class="page">
+
+    <!-- =========================
+         TITLE
+    ========================== -->
+
+    <div class="top-text">
+
+        <div class="top-small">
+            A LITTLE SOMETHING FOR YOU
+        </div>
+
+        <h1>
+            Choose a Gift 🤍
+        </h1>
+
+        <div class="top-line"></div>
+
+    </div>
+
+
+    <!-- =========================
+         GIFT GRID
+    ========================== -->
+
+    <div class="gift-grid">
+
+
+        <!-- =========================
+             GIFT 1
+        ========================== -->
+
+        <div class="gift-item gift-1"
+             onclick="openGift(1)">
+
+            <div class="gift-message"
+                 id="message1"
+                 onclick="goToGift(1,event)">
+
+                WOW! Your surprise is here! ✨
+                <br><br>
+                <span>Tap this message 🎁</span>
+
+            </div>
+
+
+            <div class="gift-box">
+
+                <div class="ribbon-vertical"></div>
+
+                <div class="ribbon-horizontal"></div>
+
+                <div class="gift-lid">
+
+                    <div class="lid-ribbon"></div>
+
+                </div>
+
+                <div class="bow">
+
+                    <div class="bow-left"></div>
+                    <div class="bow-right"></div>
+                    <div class="bow-center"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="gift-number">
+                GIFT 01
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             GIFT 2
+        ========================== -->
+
+        <div class="gift-item gift-2"
+             onclick="openGift(2)">
+
+            <div class="gift-message"
+                 id="message2"
+                 onclick="goToGift(2,event)">
+
+                No gift is here 🤍
+
+            </div>
+
+
+            <div class="gift-box">
+
+                <div class="ribbon-vertical"></div>
+
+                <div class="ribbon-horizontal"></div>
+
+                <div class="gift-lid">
+
+                    <div class="lid-ribbon"></div>
+
+                </div>
+
+                <div class="bow">
+
+                    <div class="bow-left"></div>
+                    <div class="bow-right"></div>
+                    <div class="bow-center"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="gift-number">
+                GIFT 02
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             GIFT 3
+        ========================== -->
+
+        <div class="gift-item gift-3"
+             onclick="openGift(3)">
+
+            <div class="gift-message"
+                 id="message3"
+                 onclick="goToGift(3,event)">
+
+                WOW! Your surprise is here! ✨
+                <br><br>
+                <span>Tap this message 🎁</span>
+
+            </div>
+
+
+            <div class="gift-box">
+
+                <div class="ribbon-vertical"></div>
+
+                <div class="ribbon-horizontal"></div>
+
+                <div class="gift-lid">
+
+                    <div class="lid-ribbon"></div>
+
+                </div>
+
+                <div class="bow">
+
+                    <div class="bow-left"></div>
+                    <div class="bow-right"></div>
+                    <div class="bow-center"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="gift-number">
+                GIFT 03
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             GIFT 4
+        ========================== -->
+
+        <div class="gift-item gift-4"
+             onclick="openGift(4)">
+
+            <div class="gift-message"
+                 id="message4"
+                 onclick="goToGift(4,event)">
+
+                WOW! Your surprise is here! ✨
+                <br><br>
+                <span>Tap this message 🎁</span>
+
+            </div>
+
+
+            <div class="gift-box">
+
+                <div class="ribbon-vertical"></div>
+
+                <div class="ribbon-horizontal"></div>
+
+                <div class="gift-lid">
+
+                    <div class="lid-ribbon"></div>
+
+                </div>
+
+                <div class="bow">
+
+                    <div class="bow-left"></div>
+                    <div class="bow-right"></div>
+                    <div class="bow-center"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="gift-number">
+                GIFT 04
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             GIFT 5
+        ========================== -->
+
+        <div class="gift-item gift-5"
+             onclick="openGift(5)">
+
+            <div class="gift-message"
+                 id="message5">
+
+                No gift is here 🤍
+
+            </div>
+
+
+            <div class="gift-box">
+
+                <div class="ribbon-vertical"></div>
+
+                <div class="ribbon-horizontal"></div>
+
+                <div class="gift-lid">
+
+                    <div class="lid-ribbon"></div>
+
+                </div>
+
+                <div class="bow">
+
+                    <div class="bow-left"></div>
+                    <div class="bow-right"></div>
+                    <div class="bow-center"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="gift-number">
+                GIFT 05
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             GIFT 6
+        ========================== -->
+
+        <div class="gift-item gift-6"
+             onclick="openGift(6)">
+
+            <div class="gift-message"
+                 id="message6"
+                 onclick="goToGift(6,event)">
+
+                WOW! Your surprise is here! ✨
+                <br><br>
+                <span>Tap this message 🎁</span>
+
+            </div>
+
+
+            <div class="gift-box">
+
+                <div class="ribbon-vertical"></div>
+
+                <div class="ribbon-horizontal"></div>
+
+                <div class="gift-lid">
+
+                    <div class="lid-ribbon"></div>
+
+                </div>
+
+                <div class="bow">
+
+                    <div class="bow-left"></div>
+                    <div class="bow-right"></div>
+                    <div class="bow-center"></div>
+
+                </div>
+
+            </div>
+
+
+            <div class="gift-number">
+                GIFT 06
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =========================
+         BOTTOM TEXT
+    ========================== -->
+
+    <div class="bottom-text">
+
+        SOME GIFTS ARE WORTH WAITING FOR 🤍
+
+    </div>
+
+
+</div>
+
+
+<!-- =========================
+     BACK BUTTON
+========================= -->
+
+<button class="back-btn"
+        onclick="goBack()">
+
+    BACK
+
+</button>
+
+
+<script>
+
+let giftTimer = null;
+
+
+/* =========================
+   OPEN GIFT
+========================= */
+
+function openGift(number){
+
+    const gifts =
+        document.querySelectorAll(".gift-item");
+
+    const gift =
+        gifts[number - 1];
+
+
+    /* Stop previous timer */
+
+    if(giftTimer){
+
+        clearTimeout(giftTimer);
+
+        giftTimer = null;
+
+    }
+
+
+    /* Close other gifts */
+
+    gifts.forEach(item => {
+
+        if(item !== gift){
+
+            item.classList.remove(
+                "open",
+                "burst",
+                "show-message"
+            );
+
+        }
+
+    });
+
+
+    /* If message already visible */
+
+    if(gift.classList.contains("show-message")){
+
+        return;
+
+    }
+
+
+    /* Reset current gift */
+
+    gift.classList.remove(
+        "open",
+        "burst",
+        "show-message"
+    );
+
+
+    /* Restart animation */
+
+    void gift.offsetWidth;
+
+
+    /* Open box */
+
+    gift.classList.add("open");
+
+
+    /* Create paper */
+
+    createColorfulPaper(gift);
+
+
+    /* Create stars */
+
+    createSparkleStars(gift);
+
+
+    /* Start 2 second burst */
+
+    gift.classList.add("burst");
+
+
+    /*
+       MESSAGE APPEARS
+       ONLY AFTER 2000ms
+    */
+
+    giftTimer = setTimeout(function(){
+
+        gift.classList.remove("burst");
+
+        gift.classList.add("show-message");
+
+        giftTimer = null;
+
+    },2000);
+
+}
+
+
+/* =========================
+   COLORFUL PAPER
+========================= */
+
+function createColorfulPaper(gift){
+
+    gift.querySelectorAll(".paper").forEach(
+        paper => paper.remove()
+    );
+
+
+    const colors = [
+
+        "#ff1744",
+        "#ff9100",
+        "#ffee00",
+        "#00e676",
+        "#00b0ff",
+        "#651fff",
+        "#f500ff",
+        "#ff4081",
+        "#00e5ff",
+        "#76ff03"
+
+    ];
+
+
+    for(let i = 0; i < 40; i++){
+
+        const paper =
+            document.createElement("span");
+
+
+        paper.className =
+            "paper";
+
+
+        const angle =
+            Math.random() *
+            Math.PI * 2;
+
+
+        const distance =
+            80 +
+            Math.random() * 150;
+
+
+        const x =
+            Math.cos(angle) *
+            distance;
+
+
+        const y =
+            Math.sin(angle) *
+            distance - 70;
+
+
+        const rotation =
+            Math.random() * 720 - 360;
+
+
+        paper.style.setProperty(
+            "--paper-x",
+            x + "px"
+        );
+
+
+        paper.style.setProperty(
+            "--paper-y",
+            y + "px"
+        );
+
+
+        paper.style.setProperty(
+            "--paper-r",
+            rotation + "deg"
+        );
+
+
+        paper.style.background =
+            colors[
+                Math.floor(
+                    Math.random() *
+                    colors.length
+                )
+            ];
+
+
+        paper.style.width =
+            (6 + Math.random() * 9) +
+            "px";
+
+
+        paper.style.height =
+            (8 + Math.random() * 15) +
+            "px";
+
+
+        paper.style.animationDelay =
+            (Math.random() * .15) +
+            "s";
+
+
+        gift.appendChild(paper);
+
+    }
+
+}
+
+
+/* =========================
+   SPARKLE STARS
+========================= */
+
+function createSparkleStars(gift){
+
+    gift.querySelectorAll(
+        ".sparkle,.star-burst"
+    ).forEach(
+        star => star.remove()
+    );
+
+
+    const starSymbols = [
+
+        "✦",
+        "✧",
+        "✦",
+        "✧",
+        "★"
+
+    ];
+
+
+    const starColors = [
+
+        "#ffffff",
+        "#fff176",
+        "#ff80ab",
+        "#80d8ff",
+        "#b388ff",
+        "#69f0ae"
+
+    ];
+
+
+    for(let i = 0; i < 32; i++){
+
+        const star =
+            document.createElement("span");
+
+
+        star.className =
+            "star-burst";
+
+
+        star.textContent =
+            starSymbols[
+                Math.floor(
+                    Math.random() *
+                    starSymbols.length
+                )
+            ];
+
+
+        const angle =
+            Math.random() *
+            Math.PI * 2;
+
+
+        const distance =
+            70 +
+            Math.random() * 170;
+
+
+        const x =
+            Math.cos(angle) *
+            distance;
+
+
+        const y =
+            Math.sin(angle) *
+            distance - 80;
+
+
+        star.style.setProperty(
+            "--star-x",
+            x + "px"
+        );
+
+
+        star.style.setProperty(
+            "--star-y",
+            y + "px"
+        );
+
+
+        star.style.color =
+            starColors[
+                Math.floor(
+                    Math.random() *
+                    starColors.length
+                )
+            ];
+
+
+        star.style.fontSize =
+            (10 + Math.random() * 14) +
+            "px";
+
+
+        star.style.animationDelay =
+            (Math.random() * .2) +
+            "s";
+
+
+        gift.appendChild(star);
+
+    }
+
+}
+
+
+/* =========================
+   GO TO GIFT PAGE
+========================= */
+
+function goToGift(number,event){
+
+    event.stopPropagation();
+
+
+    const pages = {
+
+        1: "giftone.html",
+
+        3: "giftthree.html",
+
+        4: "giftfour.html",
+
+        6: "giftsix.html"
+
+    };
+
+
+    if(pages[number]){
+
+        window.location.href =
+            pages[number];
+
+    }
+
+}
+
+
+/* =========================
+   BACK
+========================= */
+
+function goBack(){
+
+    window.location.href =
+        "gift.html";
+
+}
+
+</script>
+
+
+<script>
+
+/* opened-gift badges */
+
+(function(){
+
+var real=[1,3,4,6],o=[];
+
+try{
+    o=JSON.parse(
+        localStorage.getItem("openedGifts")||"[]"
+    )
+}catch(e){}
+
+var n=0;
+
+real.forEach(function(g){
+
+    if(o.indexOf(String(g))>=0){
+
+        n++;
+
+        var el=
+            document.querySelectorAll(
+                ".gift-number"
+            )[g-1];
+
+        if(el)
+            el.textContent+=" ✓ OPENED";
+
+    }
+
+});
+
+var b=
+    document.querySelector(
+        ".bottom-text"
+    );
+
+if(b&&n>0&&n<4)
+    b.textContent=
+        n+" OF 4 GIFTS OPENED 🤍 PICK THE NEXT ONE";
+
+if(b&&n==4)
+    b.textContent=
+        "ALL GIFTS OPENED 🤍 HAPPY BIRTHDAY SURYA!"
+
+})();
+
+</script>
+
+<link rel="stylesheet" href="giftcommon.css">
+
+<div class="gnav">
+    <a class="back" href="gift.html">← BACK</a>
+    <a id="gnext" href="#">NEXT GIFT 🎁</a>
+</div>
+
+<script>
+
+(function(){
+
+var pages={
+    1:"giftone.html",
+    3:"giftthree.html",
+    4:"giftfour.html",
+    6:"giftsix.html"
+},o=[];
+
+try{
+    o=JSON.parse(
+        localStorage.getItem("openedGifts")||"[]"
+    )
+}catch(e){}
+
+var t=
+    [1,3,4,6].filter(
+        function(g){
+            return o.indexOf(String(g))<0
+        }
+    )[0]||1;
+
+document.getElementById("gnext").href=
+    pages[t]
+
+})();
+
+</script>
+
+<script>
+
+setInterval(function(){
+
+var h=
+    document.createElement("div");
+
+h.className="fh";
+
+h.textContent=
+    Math.random()>.5?"♡":"♥";
+
+h.style.color=[
+    "#E0527F",
+    "#FFB6CB",
+    "#FFB6CB",
+    "#A8559B",
+    "#E0527F"
+][
+    Math.floor(
+        Math.random()*5
+    )
+];
+
+h.style.cssText+=
+    "left:"+Math.random()*100+"vw;"+
+    "font-size:"+
+    (12+Math.random()*18)+"px;"+
+    "animation-duration:"+
+    (7+Math.random()*5)+"s";
+
+document.body.appendChild(h);
+
+setTimeout(
+    function(){
+        h.remove()
+    },
+    12500
+);
+
+},1100);
+
+</script>
+
+<script src="cute.js"></script></body>
+
+</html>
+

@@ -1,0 +1,525 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="theme-color" content="#FFF3F6">
+<title>For You 🤍</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    background:#000;
+    color:#fff;
+    font-family:Arial, sans-serif;
+}
+
+/* Soft glow */
+body::before{
+    content:"";
+    position:fixed;
+    width:500px;
+    height:500px;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    background:radial-gradient(circle,
+        rgba(255,255,255,.10),
+        transparent 65%);
+    animation:glow 4s ease-in-out infinite alternate;
+}
+
+@keyframes glow{
+    from{opacity:.4; transform:translate(-50%,-50%) scale(.8);}
+    to{opacity:1; transform:translate(-50%,-50%) scale(1.15);}
+}
+
+/* Main */
+.main{
+    position:relative;
+    z-index:5;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.card{
+    width:90%;
+    max-width:380px;
+    opacity:0;
+    transform:translateY(30px);
+    animation:show 1.5s ease forwards;
+}
+
+@keyframes show{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Cute small text */
+.small{
+    font-size:11px;
+    letter-spacing:5px;
+    color:#aaa;
+    margin-bottom:18px;
+    opacity:0;
+    animation:fade 1s ease forwards;
+    animation-delay:.5s;
+}
+
+.title{
+    font-size:32px;
+    font-weight:300;
+    letter-spacing:6px;
+    opacity:0;
+    animation:fade 1s ease forwards;
+    animation-delay:1s;
+}
+
+.line{
+    width:0;
+    height:1px;
+    background:#fff;
+    margin:18px auto;
+    animation:line 1s ease forwards;
+    animation-delay:1.5s;
+}
+
+@keyframes line{
+    to{width:100px;}
+}
+
+.subtitle{
+    font-size:12px;
+    color:#999;
+    letter-spacing:2px;
+    opacity:0;
+    animation:fade 1s ease forwards;
+    animation-delay:1.8s;
+}
+
+@keyframes fade{
+    to{opacity:1;}
+}
+
+/* Password */
+.password{
+    margin-top:35px;
+    opacity:0;
+    transform:scale(.9);
+    animation:passwordShow 1s ease forwards;
+    animation-delay:2.2s;
+}
+
+@keyframes passwordShow{
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.boxes{
+    display:flex;
+    justify-content:center;
+    gap:10px;
+}
+
+.boxes input{
+    width:55px;
+    height:60px;
+
+    background:rgba(255,255,255,.04);
+    border:1px solid #7A4A63;
+    border-radius:6px;
+
+    color:#fff;
+    text-align:center;
+    font-size:22px;
+
+    outline:none;
+    transition:.3s;
+
+    opacity:0;
+    transform:translateY(15px);
+}
+
+.boxes input:nth-child(1){
+    animation:box .5s forwards 2.5s;
+}
+.boxes input:nth-child(2){
+    animation:box .5s forwards 2.65s;
+}
+.boxes input:nth-child(3){
+    animation:box .5s forwards 2.8s;
+}
+.boxes input:nth-child(4){
+    animation:box .5s forwards 2.95s;
+}
+
+@keyframes box{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.boxes input:focus{
+    border-color:#fff;
+    box-shadow:0 0 15px rgba(255,255,255,.2);
+}
+
+/* Button */
+button{
+    margin-top:25px;
+    width:180px;
+    height:42px;
+
+    background:#fff;
+    color:#000;
+
+    border:0;
+    border-radius:20px;
+
+    font-size:10px;
+    letter-spacing:3px;
+
+    cursor:pointer;
+
+    opacity:0;
+    animation:fade 1s forwards 3.4s;
+
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px rgba(255,255,255,.25);
+}
+
+/* Error */
+.error{
+    height:18px;
+    margin-top:15px;
+    font-size:10px;
+    letter-spacing:2px;
+    color:#aaa;
+    opacity:0;
+}
+
+/* Shake */
+.shake{
+    animation:shake .45s;
+}
+
+@keyframes shake{
+    0%,100%{transform:translateX(0);}
+    25%{transform:translateX(-8px);}
+    50%{transform:translateX(8px);}
+    75%{transform:translateX(-5px);}
+}
+
+/* Floating hearts */
+.heart{
+    position:fixed;
+    bottom:-30px;
+    color:#fff;
+    font-size:14px;
+    opacity:0;
+    z-index:2;
+    pointer-events:none;
+
+    animation:floatHeart linear forwards;
+}
+
+@keyframes floatHeart{
+
+    0%{
+        transform:translateY(0) scale(.6) rotate(0deg);
+        opacity:0;
+    }
+
+    15%{
+        opacity:.7;
+    }
+
+    80%{
+        opacity:.5;
+    }
+
+    100%{
+        transform:translateY(-110vh) scale(1.2) rotate(25deg);
+        opacity:0;
+    }
+}
+
+/* Unlock */
+.unlock{
+    position:fixed;
+    inset:0;
+    background:#000;
+    color:#fff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-direction:column;
+
+    z-index:20;
+
+    opacity:0;
+    pointer-events:none;
+}
+
+.unlock.active{
+    animation:unlock .8s ease forwards;
+}
+
+@keyframes unlock{
+    from{
+        opacity:0;
+        transform:scale(1.15);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+.unlock h2{
+    font-size:30px;
+    font-weight:300;
+    letter-spacing:7px;
+}
+
+.unlock p{
+    margin-top:12px;
+    font-size:10px;
+    letter-spacing:3px;
+    opacity:.6;
+}
+
+/* Mobile */
+@media(max-width:400px){
+
+    .title{
+        font-size:27px;
+    }
+
+    .boxes{
+        gap:7px;
+    }
+
+    .boxes input{
+        width:52px;
+        height:57px;
+    }
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>/* LOVE-OVERRIDE */
+
+body{background:radial-gradient(ellipse at 50% 30%,rgba(236,95,140,.3),transparent 60%),radial-gradient(ellipse at 50% 110%,rgba(255,160,185,.5),transparent 55%),#FFF3F6!important;color:#4A1F3A!important;font-family:Manrope,Arial,sans-serif!important}
+body::before{background:radial-gradient(circle,rgba(255,160,190,.2),transparent 65%)!important}
+.small{color:#E0527F!important;font-weight:500}
+.title{font-family:'Cormorant Garamond',Georgia,serif!important;font-weight:600!important;letter-spacing:5px!important;font-size:52px!important;color:#4A1F3A;text-shadow:0 0 15px rgba(255,160,190,.55)}
+.line{background:linear-gradient(90deg,transparent,#E0527F,transparent)!important;height:2px!important}
+.subtitle{color:#7A4A63!important}
+.boxes input{background:#FFFFFF!important;border:1px solid #EC5F8C!important;border-radius:14px!important;color:#4A1F3A!important}
+.boxes input:focus{border-color:#E0527F!important;box-shadow:0 0 15px rgba(255,160,190,.5)!important}
+button{background:#EC5F8C!important;color:#4A1F3A!important;border-radius:26px!important;font-weight:600;font-family:Manrope,Arial,sans-serif;box-shadow:0 0 15px rgba(255,160,190,.45)}
+button:hover{background:#FFB6CB!important;color:#FFF3F6!important;box-shadow:0 0 22px rgba(255,160,190,.6)!important}
+.error{color:#E0527F!important}
+.unlock{background:radial-gradient(ellipse at 50% 50%,rgba(255,160,185,.7),transparent 65%),#FFF3F6!important;color:#4A1F3A!important}
+.unlock h2{font-family:'Cormorant Garamond',Georgia,serif!important;font-weight:600!important;font-style:italic;letter-spacing:1px!important;font-size:46px!important;line-height:1.15;padding:0 18px;color:#A8559B;text-shadow:0 0 15px #FFB6CB}
+.unlock p{opacity:.85!important;color:#7A4A63}
+@media(max-width:400px){.title{font-size:44px!important;letter-spacing:4px!important}.unlock h2{font-size:36px!important}}
+html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
+body{height:100vh;height:100dvh;overflow-x:hidden;overflow-y:auto!important}
+.main{height:auto!important;min-height:100vh;min-height:100dvh;padding:24px 0 96px}
+button{touch-action:manipulation}
+
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="cute.css"></head>
+
+<body>
+
+<div class="main">
+
+    <div class="card">
+
+        <div class="small">A LITTLE SECRET 🤍</div>
+
+        <div class="title">For You</div>
+
+        <div class="line"></div>
+
+        <div class="subtitle">
+            ENTER THE PASSWORD
+        </div>
+
+        <div class="password">
+
+            <div class="boxes">
+
+                <input type="password" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="1" id="p1">
+                <input type="password" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="1" id="p2">
+                <input type="password" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="1" id="p3">
+                <input type="password" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="1" id="p4">
+
+            </div>
+
+            <button onclick="checkPassword()">
+                UNLOCK 🤍
+            </button>
+
+            <div class="error" id="error">
+                TRY AGAIN 🤍
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Unlock screen -->
+
+<div class="unlock" id="unlock">
+
+    <h2>Unlocked 🤍</h2>
+
+    <p>YOUR SURPRISE IS WAITING...</p>
+
+</div>
+
+
+<script>
+
+/* Password box movement */
+
+const inputs = document.querySelectorAll(".boxes input");
+
+inputs.forEach((input,index)=>{
+
+    input.addEventListener("input",()=>{
+
+        if(input.value && index < 3){
+            inputs[index+1].focus();
+        }
+
+        if(index === 3 && input.value){
+            setTimeout(checkPassword,300);
+        }
+
+    });
+
+    input.addEventListener("keydown",(e)=>{
+
+        if(e.key === "Backspace" &&
+           !input.value &&
+           index > 0){
+
+            inputs[index-1].focus();
+        }
+
+    });
+
+});
+
+
+/* Password */
+
+function checkPassword(){
+
+    const password =
+        p1.value +
+        p2.value +
+        p3.value +
+        p4.value;
+
+    const error =
+        document.getElementById("error");
+
+    if(password === "2014"){
+
+        error.style.opacity="0";
+
+        document.getElementById("unlock")
+            .classList.add("active");
+
+        setTimeout(()=>{
+
+            window.location.href="gift.html";
+
+        },2200);
+
+    }else{
+
+        error.style.opacity="1";
+
+        const boxes =
+            document.querySelector(".boxes");
+
+        boxes.classList.remove("shake");
+
+        void boxes.offsetWidth;
+
+        boxes.classList.add("shake");
+
+        inputs.forEach(input=>{
+            input.value="";
+        });
+
+        inputs[0].focus();
+    }
+}
+
+
+/* Floating white hearts */
+
+function createHeart(){
+
+    const heart =
+        document.createElement("div");
+
+    heart.className="heart";
+    heart.innerHTML="♡";
+
+    heart.style.left =
+        Math.random()*100+"vw";
+
+    heart.style.fontSize =
+        (10 + Math.random()*14)+"px";
+
+    heart.style.animationDuration =
+        (5 + Math.random()*5)+"s";
+
+    heart.style.color=["#E0527F","#FFB6CB","#FFB6CB","#A8559B","#E0527F"][Math.floor(Math.random()*5)];heart.style.textShadow="0 0 15px #FFB6CB";document.body.appendChild(heart);
+
+    setTimeout(()=>{
+        heart.remove();
+    },10000);
+}
+
+
+/* Create hearts continuously */
+
+setInterval(createHeart,700);
+
+</script>
+
+<a href="index.html" style="position:fixed;left:50%;bottom:26px;transform:translateX(-50%);padding:11px 26px;background:rgba(255,243,246,.88);color:#E0527F;border:1px solid #E0527F;border-radius:26px;font:600 11px Manrope,Arial,sans-serif;letter-spacing:2px;text-decoration:none;z-index:50">← BACK</a>
+<script src="cute.js"></script></body>
+</html>

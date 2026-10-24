@@ -1,0 +1,363 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#FFF3F6">
+<title>Gift Three 🤍</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="love.css">
+<link rel="stylesheet" href="giftcommon.css">
+
+<style>
+/* PAGE 1 */
+.page-one{
+    position:relative;
+    width:100%;
+    height:100vh;
+    height:100dvh;
+    min-height:620px;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:20px 20px 74px;
+    background:radial-gradient(ellipse at 50% 0%,rgba(236,95,140,.32),transparent 60%),radial-gradient(ellipse at 50% 105%,rgba(255,160,185,.45),transparent 60%),#FFE9EF
+}
+
+.hearts{
+    position:absolute;
+    inset:0;
+    overflow:hidden;
+    pointer-events:none;
+    z-index:1
+}
+
+.heart{
+    position:absolute;
+    bottom:-40px;
+    color:#E0527F;
+    font-size:18px;
+    text-shadow:0 0 15px #FFB6CB;
+    animation:floatHeart linear infinite
+}
+
+.heart:nth-child(5n+1){color:#E0527F}
+.heart:nth-child(5n+2){color:#FFB6CB}
+.heart:nth-child(5n+3){color:#FFB6CB}
+.heart:nth-child(5n+4){color:#A8559B}
+.heart:nth-child(5n){color:#E0527F}
+
+.heart:nth-child(1){left:3%;animation-duration:11s;animation-delay:1s}
+.heart:nth-child(2){left:10%;animation-duration:14s;animation-delay:3s}
+.heart:nth-child(3){left:18%;animation-duration:10s;animation-delay:5s}
+.heart:nth-child(4){left:27%;animation-duration:13s;animation-delay:2s}
+.heart:nth-child(5){left:36%;animation-duration:11s;animation-delay:6s}
+.heart:nth-child(6){left:45%;animation-duration:15s;animation-delay:1s}
+.heart:nth-child(7){left:54%;animation-duration:12s;animation-delay:4s}
+.heart:nth-child(8){left:63%;animation-duration:10s;animation-delay:7s}
+.heart:nth-child(9){left:72%;animation-duration:14s;animation-delay:2s}
+.heart:nth-child(10){left:81%;animation-duration:11s;animation-delay:5s}
+.heart:nth-child(11){left:90%;animation-duration:13s;animation-delay:1s}
+.heart:nth-child(12){left:96%;animation-duration:16s;animation-delay:4s}
+
+@keyframes floatHeart{
+    0%{transform:translateY(0) scale(.7);opacity:0}
+    15%{opacity:.8}
+    100%{transform:translateY(-110vh) scale(1.15);opacity:0}
+}
+
+.content{
+    position:relative;
+    z-index:5;
+    width:100%;
+    max-width:1200px;
+    height:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center
+}
+
+.photo-frame{
+    position:absolute;
+    width:170px;
+    height:205px;
+    padding:8px 8px 26px;
+    background:#FFFFFF;
+    border:1px solid #EC5F8C;
+    border-radius:6px;
+    box-shadow:0 0 22px rgba(236,95,140,.5),0 12px 28px rgba(0,0,0,.65);
+    transition:transform .4s,box-shadow .4s,border-color .4s;
+    z-index:3
+}
+
+/* Brown tape removed */
+
+.photo-frame img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    border-radius:2px
+}
+
+.photo-frame:hover{
+    transform:scale(1.08) rotate(0deg)!important;
+    z-index:10;
+    border-color:#E0527F;
+    box-shadow:0 0 26px rgba(240,100,143,.6),0 12px 28px rgba(0,0,0,.65)
+}
+
+.photo1{top:4%;left:1%;transform:rotate(-8deg)}
+.photo2{top:12%;left:16%;transform:rotate(5deg)}
+.photo3{top:12%;right:16%;transform:rotate(-5deg)}
+.photo4{top:4%;right:1%;transform:rotate(8deg)}
+.photo5{bottom:4%;left:1%;transform:rotate(7deg)}
+.photo6{bottom:12%;left:16%;transform:rotate(-5deg)}
+.photo7{bottom:12%;right:16%;transform:rotate(5deg)}
+.photo8{bottom:4%;right:1%;transform:rotate(-7deg)}
+
+.message{
+    position:relative;
+    z-index:8;
+    width:500px;
+    max-width:100%;
+    text-align:center;
+    padding:25px
+}
+
+.message p{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-weight:500;
+    font-size:25px;
+    line-height:1.55;
+    color:#4A1F3A
+}
+
+.message .highlight{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-weight:600;
+    font-style:italic;
+    font-size:38px;
+    line-height:1.2;
+    margin-top:16px;
+    color:#E0527F;
+    text-shadow:0 0 15px rgba(255,160,190,.5)
+}
+
+@media(max-width:1000px){
+    .photo-frame{width:145px;height:180px}
+    .message{width:440px}
+    .message p{font-size:22px}
+    .message .highlight{font-size:33px}
+    .photo2{left:14%}
+    .photo3{right:14%}
+    .photo6{left:14%}
+    .photo7{right:14%}
+}
+
+@media(max-width:650px){
+    .page-one{padding:10px 10px 70px;min-height:600px}
+    .photo-frame{width:92px;height:118px;padding:5px 5px 16px}
+
+    .photo1{top:3%;left:3%}
+    .photo2{top:9%;left:26%}
+    .photo3{top:9%;right:26%}
+    .photo4{top:3%;right:3%}
+    .photo5{bottom:3%;left:3%}
+    .photo6{bottom:9%;left:26%}
+    .photo7{bottom:9%;right:26%}
+    .photo8{bottom:3%;right:3%}
+
+    .message{padding:4px 2px}
+    .message p{
+        font-size:clamp(13.5px,min(4.1vw,2.2dvh),17px);
+        line-height:1.5
+    }
+
+    .message .highlight{
+        font-size:clamp(21px,min(6.2vw,3.3dvh),28px);
+        margin-top:8px;
+        line-height:1.15
+    }
+}
+
+/* PAGE 2 ring */
+#ringsec{
+    background:radial-gradient(ellipse at 50% 30%,rgba(236,95,140,.4) 0%,transparent 60%),radial-gradient(ellipse at 50% 105%,rgba(255,160,185,.5),transparent 55%),#FFF3F6;
+    color:#4A1F3A
+}
+
+#ringsec .ttl{
+    color:#4A1F3A;
+    text-shadow:0 0 15px #FFB6CB
+}
+
+#ringsec .sub{color:#7A4A63}
+
+.bk{
+    position:absolute;
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(255,182,203,.35),rgba(255,182,203,0) 70%);
+    animation:fl2 7s ease-in-out infinite;
+    pointer-events:none
+}
+
+.bk:nth-of-type(2n){
+    background:radial-gradient(circle,rgba(240,100,143,.3),rgba(240,100,143,0) 70%)
+}
+
+.sp{
+    position:absolute;
+    color:#E0A63D;
+    opacity:.8;
+    animation:fl2 4s ease-in-out infinite;
+    pointer-events:none;
+    text-shadow:0 0 15px #FFB6CB
+}
+
+@keyframes fl2{
+    50%{transform:translateY(-12px)}
+}
+
+.floor{
+    width:min(360px,78vw);
+    height:30px;
+    margin:-4px auto 0;
+    border-radius:50%;
+    background:radial-gradient(ellipse,rgba(236,95,140,.7),transparent 70%)
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="cute.css"></head>
+
+<body data-gift="3">
+
+<section class="page-one">
+    <div class="hearts">
+        <span class="heart">♡</span>
+        <span class="heart">♡</span>
+        <span class="heart">♡</span>
+        <span class="heart">♡</span>
+        <span class="heart">♡</span>
+        <span class="heart">♡</span>
+        <span class="heart">♡</span>
+        <span class="heart">♡</span>
+        <span class="heart">♡</span>
+        <span class="heart">♡</span>
+        <span class="heart">♡</span>
+        <span class="heart">♡</span>
+    </div>
+
+    <div class="content">
+
+        <!-- PHOTO 1 -->
+        <div class="photo-frame photo1">
+            <img src="litle one.jpeg" alt="Memory Photo 1">
+        </div>
+
+        <!-- PHOTO 2 -->
+        <div class="photo-frame photo2">
+            <img src="litle five.jpeg" alt="Memory Photo 2">
+        </div>
+
+        <!-- PHOTO 3 -->
+        <div class="photo-frame photo3">
+            <img src="litle two.jpeg" alt="Memory Photo 3">
+        </div>
+
+        <!-- PHOTO 4 -->
+        <div class="photo-frame photo4">
+            <img src="litle three.jpeg" alt="Memory Photo 4">
+        </div>
+
+        <!-- CENTER MESSAGE -->
+        <div class="message">
+            <p>
+                “Once upon a time,<br>
+                there was this tiny little boy <br>
+                who had no idea<br>
+                how special he would become<br><br>
+
+                From the little boy in this photo<br>
+
+                to the person standing in my life today!!!<br>
+            </p>
+
+            <div class="highlight">
+                I missed that cute little boy....<br>
+                Ayyoo en alagu thango
+            </div>
+        </div>
+
+        <!-- PHOTO 5 -->
+        <div class="photo-frame photo5">
+            <img src="litle six.jpeg" alt="Memory Photo 5">
+        </div>
+
+        <!-- PHOTO 6 -->
+        <div class="photo-frame photo6">
+            <img src="litle four.jpeg" alt="Memory Photo 6">
+        </div>
+
+        <!-- PHOTO 7 -->
+        <div class="photo-frame photo7">
+            <img src="litle egiht.jpeg" alt="Memory Photo 7">
+        </div>
+
+        <!-- PHOTO 8 -->
+        <div class="photo-frame photo8">
+            <img src="litle seven.jpeg" alt="Memory Photo 8">
+        </div>
+
+    </div>
+</section>
+
+<!-- PAGE 2 : Around you, always -->
+<section class="sec" id="ringsec">
+    <div class="bk" style="width:150px;height:150px;top:6%;left:-30px"></div>
+    <div class="bk" style="width:100px;height:100px;top:22%;right:-20px;animation-delay:1.5s"></div>
+    <div class="bk" style="width:130px;height:130px;bottom:14%;left:6%;animation-delay:3s"></div>
+    <div class="bk" style="width:80px;height:80px;bottom:26%;right:10%;animation-delay:2s"></div>
+
+    <div class="sp" style="top:10%;left:9%">✦</div>
+    <div class="sp" style="top:18%;right:10%;animation-delay:1s">♡</div>
+    <div class="sp" style="bottom:22%;left:12%;animation-delay:2s">♡</div>
+    <div class="sp" style="bottom:16%;right:9%;animation-delay:.6s">✦</div>
+
+    <h2 class="ttl">
+        you aren't just an option for me <br>
+        You're my only choice "It's always been you"
+    </h2>
+
+    <p class="sub">Tap any photo to open</p>
+
+    <div class="stage">
+        <div class="ring" id="ring"></div>
+    </div>
+
+    <div class="floor"></div>
+</section>
+
+<div id="lb"></div>
+
+<script src="giftcommon.js"></script>
+<script>
+fixImgs(".photo-frame img");
+
+const N = 10;
+const R = innerWidth < 700 ? 200 : 340;
+const ring = document.getElementById("ring");
+
+for(let i = 0; i < N; i++){
+    const e = loadImg("around/" + (i + 1), "photo " + (i + 1));
+    e.style.transform = "rotateY(" + (i * 360 / N) + "deg) translateZ(" + R + "px)";
+    e.onclick = () => openLB(e.src);
+    ring.appendChild(e);
+}
+</script>
+
+<script src="cute.js"></script></body>
+</html>
+

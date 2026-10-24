@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#FFF3F6">
+<title>Gift Six 🤍</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="love.css"><link rel="stylesheet" href="giftcommon.css">
+<style>
+#p3{background:radial-gradient(ellipse at 50% 42%,rgba(255,160,185,.55),transparent 62%),#FFE9EF;color:#4A1F3A}
+#p3 .ttl{color:#4A1F3A}
+.duo{position:relative;height:360px;width:min(420px,88vw);margin:34px auto 0}
+.duo img{position:absolute;width:62%;aspect-ratio:3/4;object-fit:cover;border:6px solid #FFFFFF;border-radius:8px;box-shadow:0 0 0 1px #EC5F8C,0 0 26px rgba(236,95,140,.65),0 16px 36px rgba(0,0,0,.65);transition:.9s cubic-bezier(.5,0,.2,1);cursor:pointer}
+.d1{left:0;top:0;transform:rotate(-7deg);z-index:2}.d2{right:0;bottom:0;transform:rotate(6deg);z-index:1}
+.sw .d1{transform:translate(24px,24px) rotate(4deg) scale(.92);z-index:1}.sw .d2{transform:translate(-24px,-24px) rotate(-5deg) scale(1.05);z-index:2}
+#p4{background:radial-gradient(ellipse at 50% 0%,rgba(236,95,140,.35),transparent 60%),#FFF3F6}
+#p4 .ttl{color:#4A1F3A}
+.mq{overflow:hidden;align-self:stretch;margin:10px -18px 14px}
+.mt{display:flex;width:max-content;animation:mq 45s linear infinite}
+.mq.rev .mt{animation-direction:reverse}.mq:hover .mt{animation-play-state:paused}
+.mt img{height:200px;aspect-ratio:3/4;object-fit:cover;border-radius:14px;border:3px solid #EC5F8C;margin-right:12px;box-shadow:0 0 18px rgba(236,95,140,.5);cursor:pointer;background:#FFFFFF}
+.mt img:hover{border-color:#E0527F}
+@keyframes mq{to{transform:translateX(-50%)}}
+.end{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-style:italic;font-size:30px;color:#E0527F;text-shadow:0 0 15px rgba(255,160,190,.5);margin-top:26px}
+@media(max-width:700px){.mt img{height:165px}.duo{height:330px}}
+</style><link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="cute.css"></head>
+<body data-gift="6" data-hearts>
+
+<section class="sec" id="p3">
+  <h2 class="ttl rv">Two of us</h2><p class="sub rv">You and me, always</p><div class="duo" id="duo"></div>
+</section>
+
+<section class="sec" id="p4">
+  <h2 class="ttl rv">Our moments</h2><p class="sub rv">Tap any photo to open</p>
+  <div class="mq" id="row1"><div class="mt"></div></div><div class="mq rev" id="row2"><div class="mt"></div></div>
+  <div class="end rv">Made with love 🤍</div>
+</section>
+
+<div id="lb"></div>
+<script src="giftcommon.js"></script>
+<script>
+/* Two of us: two/1, two/2   |   rows: scroll/1-10 (right->left), scroll/11-20 (left->right) */
+const du=document.getElementById("duo"),a=loadImg("two/1","photo 1"),b=loadImg("two/2","photo 2");
+a.className="d1";b.className="d2";a.onclick=b.onclick=function(){openLB(this.src)};du.append(a,b);
+setInterval(()=>du.classList.toggle("sw"),3200);
+function row(id,from){const t=document.querySelector("#"+id+" .mt");for(let k=0;k<2;k++)for(let i=0;i<10;i++){const e=loadImg("scroll/"+(from+i),"photo "+(from+i));e.onclick=function(){openLB(this.src)};t.appendChild(e)}}
+row("row1",1);row("row2",11);
+</script><script src="cute.js"></script></body></html>

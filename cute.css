@@ -1,0 +1,49 @@
+/* CUTE LOVE THEME - Strawberry Milk. Loaded last on every page. */
+:root{--ink:#4A1F3A;--ink2:#7A4A63;--pink:#EC5F8C;--rose:#E0527F;--blush:#FFF3F6;--petal:#FFC2D4}
+html body{color:var(--ink2)}
+html body .sec,html body .blk,html body .page-one,html body .page,html body .main{background-color:var(--blush)!important;background-image:radial-gradient(circle at 10% 14%,#FFD3E1 0,transparent 34%),radial-gradient(circle at 92% 86%,#E8DBFF 0,transparent 36%),radial-gradient(circle,rgba(236,95,140,.12) 2px,transparent 2.6px)!important;background-size:auto,auto,28px 28px!important}
+html body section:nth-of-type(even){background-color:#FFEAF1!important}
+html body .sec.full{background-color:#FFEAF1!important}
+/* script headings */
+.ttl,h1,h2,h3,.title,.mini,.end,.special-label,.special-message,.message .highlight,#wish,.unlock h2{font-family:'Dancing Script','Cormorant Garamond',cursive!important;font-style:normal!important;font-weight:700!important;letter-spacing:0!important;text-shadow:0 2px 0 #fff,0 6px 18px rgba(236,95,140,.3)!important}
+.ttl{font-size:clamp(40px,12vw,64px)!important;color:var(--ink)!important;line-height:1.15!important}
+.title{font-size:clamp(54px,15vw,70px)!important;color:var(--rose)!important}
+.message h1{font-size:clamp(50px,14vw,86px)!important;line-height:1!important;color:var(--ink)!important}
+.message h1 .hl{color:var(--pink)!important}
+.card h2,.unlock h2{font-size:clamp(38px,10vw,52px)!important}
+.message .highlight{font-size:clamp(25px,7vw,36px)!important;line-height:1.25!important}
+#wish{font-size:clamp(30px,8.5vw,38px)!important}
+.mini,.end{font-size:clamp(32px,9vw,40px)!important}
+.special-label,.special-message{font-size:clamp(26px,7vw,34px)!important}
+h2{color:var(--ink)!important}
+.card h2,.end,.mini,.special-label,.special-message,.message .highlight,#wish{color:var(--rose)!important}
+/* little labels */
+.small,.subtitle,.bottom,.sub,.wish-note,.special-note{color:var(--ink2)!important;letter-spacing:2px}
+.sub{letter-spacing:.3px}
+/* buttons */
+html body button,html body .btn,html body #yesBtn,html body .next-btn,html body .gnav a:not(.back){background:linear-gradient(135deg,#FF8FB0,#EC5F8C)!important;color:#fff!important;border:0!important;border-radius:999px!important;font-weight:800!important;letter-spacing:1px;box-shadow:0 8px 20px rgba(236,95,140,.4),inset 0 -3px 0 rgba(0,0,0,.08)!important}
+html body #noBtn,html body .gnav a.back,html body a[href="index.html"],html body a[href="next.html"],html body a[href="gift.html"]{background:#fff!important;color:var(--rose)!important;border:2px solid var(--petal)!important;border-radius:999px!important;box-shadow:0 6px 16px rgba(236,95,140,.18)!important}
+html body .gnav a.pulse{animation:gp 1.2s infinite}
+/* cards, polaroids, frames */
+.container,.card,.wish-card,.special-card,.pol,.pol2,.photo-frame,.vcard{background:#fff!important;border:3px solid #fff!important;box-shadow:0 0 0 2px var(--petal),0 16px 36px rgba(236,95,140,.26)!important;border-radius:24px!important}
+.photo-frame,.pol,.pol2{border-radius:12px!important}
+.photo-wrapper{background:#fff!important;box-shadow:0 0 0 5px var(--petal),0 0 0 9px #fff,0 12px 28px rgba(236,95,140,.35)!important}
+.sec.full .bg,#s1 .bg{background:#fff!important;border:3px solid #fff!important;box-shadow:0 0 0 2px var(--petal),0 16px 36px rgba(236,95,140,.26)!important;border-radius:16px!important}
+.ring img,.mt img,.duo img{border-color:#fff!important;box-shadow:0 0 0 2px var(--petal),0 10px 24px rgba(236,95,140,.3)!important;background:#fff}
+.corner{border-color:var(--pink)!important}
+.boxes input,.wish-card textarea{background:#fff!important;border:2px solid var(--petal)!important;color:var(--ink)!important;border-radius:16px!important}
+.boxes input:focus,.wish-card textarea:focus{border-color:var(--pink)!important;box-shadow:0 0 0 4px rgba(236,95,140,.18)!important}
+.wish-card p,.card p{color:var(--ink2)!important}
+.hl{color:var(--rose)!important;font-weight:700!important}
+.line,.top-line{background:linear-gradient(90deg,var(--pink),transparent)!important}
+.unlock{background:radial-gradient(circle at 50% 45%,#FFD3E1,#FFF3F6 70%)!important}
+.unlock p{color:var(--ink2)!important}
+.star{background:#FFB6CB!important}.star:nth-child(3n){background:#F6C768!important}
+.ribbon-hint{color:#fff!important;text-shadow:0 2px 8px rgba(120,20,60,.6)!important}
+.veil{background:linear-gradient(to bottom,rgba(255,243,246,.25),transparent 40%,transparent 70%,rgba(255,243,246,.7))!important}
+#lb{background:rgba(74,31,58,.88)!important}#lb img{border:4px solid #fff!important;box-shadow:0 0 0 2px var(--petal)!important}
+/* made-with-love pill */
+.mwl{position:fixed;top:calc(8px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);z-index:350;padding:5px 14px;border-radius:999px;background:rgba(255,255,255,.9);color:var(--rose);font:700 11px Manrope,sans-serif;letter-spacing:.5px;box-shadow:0 4px 12px rgba(236,95,140,.22);pointer-events:none;white-space:nowrap}
+.mwl b{display:inline-block;animation:hb 1.3s infinite}
+@keyframes hb{20%,60%{transform:scale(1.3)}}
+@media(prefers-reduced-motion:reduce){.mwl b{animation:none}}

@@ -1,0 +1,598 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#FFF3F6">
+<title>Make a wish 🕯️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="love.css">
+<link rel="stylesheet" href="giftcommon.css">
+
+<style>
+/* S2 cake */
+#s2{
+    background:radial-gradient(ellipse at 50% 22%,rgba(255,160,185,.62) 0%,transparent 62%),radial-gradient(ellipse at 85% 95%,rgba(236,95,140,.38),transparent 55%),#FFE9EF;
+    color:#4A1F3A;
+}
+
+.star{
+    position:absolute;
+    width:3px;
+    height:3px;
+    border-radius:50%;
+    background:#FFF7F2;
+    animation:tw 3s infinite ease-in-out;
+}
+
+.star:nth-child(3n){background:#E0A63D}
+
+@keyframes tw{
+    50%{opacity:.15;transform:scale(.5)}
+}
+
+.cakewrap{
+    position:relative;
+    margin:104px auto 4px;
+    width:260px;
+}
+
+.glow{
+    position:absolute;
+    left:50%;
+    top:-70px;
+    width:380px;
+    height:320px;
+    margin-left:-190px;
+    background:radial-gradient(rgba(224,166,61,.38),transparent 68%);
+    transition:1.6s;
+    pointer-events:none;
+}
+
+.dim .glow{opacity:0}
+
+.cn{
+    position:absolute;
+    top:-64px;
+    left:0;
+    right:0;
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    z-index:3;
+}
+
+.c{
+    position:relative;
+    width:12px;
+    height:54px;
+    border-radius:4px;
+    background:repeating-linear-gradient(135deg,#FFF7F2 0 6px,#E0527F 6px 12px);
+}
+
+.c .hit{
+    position:absolute;
+    left:-12px;
+    right:-12px;
+    top:-46px;
+    bottom:0;
+    cursor:pointer;
+}
+
+.f{
+    position:absolute;
+    left:50%;
+    top:-29px;
+    margin-left:-9px;
+    width:18px;
+    height:28px;
+    background:radial-gradient(#fff 15%,#ffd98a 50%,#e8793a);
+    border-radius:50% 50% 50% 50%/62% 62% 38% 38%;
+    transform-origin:bottom;
+    animation:fl .25s infinite alternate;
+    box-shadow:0 0 22px 9px rgba(224,166,61,.55);
+    transition:.35s;
+}
+
+.out .f{
+    transform:scale(0);
+    opacity:0;
+}
+
+.puff{
+    position:absolute;
+    left:50%;
+    top:-24px;
+    width:8px;
+    height:8px;
+    margin-left:-4px;
+    border-radius:50%;
+    background:rgba(168,85,155,.7);
+    animation:sm 2.2s forwards;
+    pointer-events:none;
+}
+
+@keyframes sm{
+    to{transform:translateY(-84px) scale(6);opacity:0}
+}
+
+@keyframes fl{
+    to{transform:scale(1.12,.9) rotate(4deg)}
+}
+
+.ly{
+    position:relative;
+    margin:0 auto;
+    height:64px;
+    border-radius:12px;
+    box-shadow:inset 0 -10px 16px rgba(0,0,0,.3);
+}
+
+.ly:before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    height:22px;
+    background:radial-gradient(circle at 13px 0,#FFF7F2 11px,transparent 12px) 0 0/26px 22px repeat-x;
+    border-radius:12px 12px 0 0;
+}
+
+.l3{width:130px;background:linear-gradient(#FFF7F2,#A8559B)}
+.l2{width:200px;background:linear-gradient(#FFB6CB,#E0527F)}
+.l1{width:260px;background:linear-gradient(#F27AA0,#E0527F)}
+
+.l1:after{
+    content:"♥ ♥ ♥ ♥ ♥";
+    position:absolute;
+    bottom:8px;
+    left:0;
+    right:0;
+    color:#FFB6CB;
+    font-size:14px;
+    letter-spacing:12px;
+}
+
+.l2:after{
+    content:"♡ ♡ ♡ ♡";
+    position:absolute;
+    bottom:8px;
+    left:0;
+    right:0;
+    color:#4A1F3A;
+    font-size:13px;
+    letter-spacing:12px;
+}
+
+.plate{
+    height:16px;
+    width:330px;
+    margin:0 -35px;
+    background:linear-gradient(#e9cf8c,#E0A63D 60%,#a98838);
+    border-radius:50%;
+    box-shadow:0 14px 30px rgba(0,0,0,.75);
+}
+
+.cake{animation:cb 4s ease-in-out infinite}
+
+@keyframes cb{
+    50%{transform:translateY(-6px)}
+}
+
+.btn{
+    margin-top:20px;
+    padding:14px 34px;
+    border:0;
+    border-radius:30px;
+    background:#EC5F8C;
+    color:#4A1F3A;
+    font:600 15px Manrope,sans-serif;
+    letter-spacing:1px;
+    cursor:pointer;
+    box-shadow:0 0 15px rgba(255,160,190,.5);
+    transition:.3s;
+}
+
+.btn:hover{background:#FFB6CB;color:#FFF3F6}
+.btn:active{transform:scale(.95)}
+
+#wish{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-weight:600;
+    font-style:italic;
+    font-size:clamp(24px,7.2vw,32px);
+    line-height:1.2;
+    padding:0 10px;
+    margin-top:18px;
+    min-height:56px;
+    color:#A8559B;
+    text-shadow:0 0 15px #FFB6CB;
+    white-space:pre-wrap;
+    overflow-wrap:anywhere;
+}
+
+/* BIRTHDAY WISH MESSAGE CARD */
+.wish-card{
+    width:min(88%,340px);
+    margin:20px auto 0;
+    padding:18px;
+    box-sizing:border-box;
+    text-align:center;
+    background:rgba(255,255,255,.94);
+    border:1px solid rgba(224,166,61,.65);
+    border-radius:20px;
+    box-shadow:0 0 22px rgba(236,95,140,.25);
+    position:relative;
+    z-index:5;
+}
+
+.wish-card h3{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-size:25px;
+    color:#A8559B;
+    margin:0 0 7px;
+}
+
+.wish-card p{
+    font-family:Manrope,sans-serif;
+    font-size:11px;
+    line-height:1.6;
+    color:#7A4A63;
+    margin:0 0 13px;
+}
+
+.wish-card textarea{
+    display:block;
+    width:100%;
+    min-height:78px;
+    padding:12px;
+    box-sizing:border-box;
+    resize:vertical;
+    border:1px solid rgba(240,100,143,.55);
+    border-radius:12px;
+    outline:none;
+    background:#FFE9EF;
+    color:#4A1F3A;
+    font:13px/1.6 Manrope,sans-serif;
+}
+
+.wish-card textarea::placeholder{color:#C9A5B8}
+
+.wish-card textarea:focus{
+    border-color:#E0A63D;
+    box-shadow:0 0 12px rgba(224,166,61,.15);
+}
+
+.wish-note{
+    margin-top:9px;
+    font:10px Manrope,sans-serif;
+    color:#E0A63D;
+}
+
+/* MOBILE FULL IMAGE VIEW */
+.sec.full{
+    width:100%;
+    height:100vh;
+    height:100dvh;
+    overflow:hidden;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+/* EXISTING PHOTO CARD DESIGN FOR SECTION 3 */
+.sec.full .bg{
+    position:relative !important;
+    top:auto !important;
+    left:auto !important;
+    width:min(72vw,300px) !important;
+    max-width:72vw !important;
+    max-height:75vh !important;
+    height:auto !important;
+    object-fit:contain;
+    object-position:center;
+    display:block !important;
+    flex-shrink:0;
+    margin:auto;
+    background:#FFFFFF;
+    padding:10px 10px 30px;
+    border:1px solid #EC5F8C;
+    border-radius:10px;
+    box-shadow:0 0 28px rgba(236,95,140,.55),0 16px 36px rgba(0,0,0,.65);
+    box-sizing:border-box;
+    opacity:1 !important;
+    translate:100vw 0;
+    animation:photoCardIn .9s cubic-bezier(.22,.61,.36,1) forwards;
+}
+
+@keyframes photoCardIn{
+    from{translate:100vw 0;opacity:0}
+    to{translate:0 0;opacity:1}
+}
+
+/* SECTION 1: TOP AND BOTTOM LANDSCAPE PHOTOS */
+#s1{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:8px;
+    width:100%;
+    height:100vh;
+    height:100dvh;
+    overflow:hidden;
+    box-sizing:border-box;
+}
+
+#s1 .bg{
+    position:relative !important;
+    top:auto !important;
+    left:auto !important;
+    display:block !important;
+    width:100% !important;
+    max-width:100% !important;
+    height:calc(50% - 4px) !important;
+    max-height:calc(50% - 4px) !important;
+    flex:0 0 calc(50% - 4px);
+    min-width:0;
+    min-height:0;
+    object-fit:contain;
+    object-position:center;
+    margin:0 !important;
+    padding:6px;
+    box-sizing:border-box;
+    background:#FFFFFF;
+    border:1px solid #EC5F8C;
+    border-radius:10px;
+    box-shadow:0 0 20px rgba(236,95,140,.45),0 12px 25px rgba(0,0,0,.55);
+    translate:none !important;
+    animation:none !important;
+    opacity:1 !important;
+}
+
+/* S4 letter */
+#s4{
+    background:radial-gradient(ellipse at 15% 8%,rgba(236,95,140,.3),transparent 55%),radial-gradient(ellipse at 88% 92%,rgba(255,160,185,.4),transparent 55%),#FFE9EF;
+}
+
+.d{
+    position:absolute;
+    font-size:22px;
+    opacity:.6;
+    color:#E0527F;
+    animation:fl2 4s ease-in-out infinite;
+    pointer-events:none;
+    text-shadow:0 0 15px #FFB6CB;
+}
+
+.d:nth-child(2n){color:#E0A63D}
+
+@keyframes fl2{
+    50%{transform:translateY(-12px)}
+}
+
+.letter{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:30px;
+    max-width:980px;
+    width:100%;
+    position:relative;
+    z-index:3;
+}
+
+.pol2{
+    background:#FFFFFF;
+    padding:10px 10px 30px;
+    border:1px solid #EC5F8C;
+    border-radius:10px;
+    box-shadow:0 0 28px rgba(236,95,140,.55),0 16px 36px rgba(0,0,0,.65);
+    transform:rotate(-3deg);
+    width:min(72vw,300px);
+}
+
+.pol2 img{
+    width:100%;
+    height:auto;
+    display:block;
+    border-radius:4px;
+}
+
+.card{
+    background:#FFFFFF;
+    border:1px solid rgba(240,100,143,.4);
+    border-radius:26px;
+    padding:28px 22px;
+    text-align:left;
+    max-width:540px;
+    box-shadow:0 20px 50px rgba(0,0,0,.65),0 0 26px rgba(255,160,185,.4);
+}
+
+.card h2{
+    font-family:'Cormorant Garamond',Georgia,serif;
+    font-weight:600;
+    font-size:clamp(28px,8vw,38px);
+    color:#E0527F;
+    text-align:center;
+    line-height:1.1;
+    margin-bottom:10px;
+    text-shadow:0 0 15px rgba(255,160,190,.45);
+}
+
+.card p{
+    font-size:14.5px;
+    line-height:1.9;
+    margin-top:14px;
+    font-weight:400;
+    color:#7A4A63;
+}
+
+.hl{color:#A8559B;font-weight:500}
+
+@media(min-width:860px){
+    .letter{flex-direction:row;align-items:center;gap:56px}
+    .card p{font-size:15.5px}
+}
+
+@media(max-height:700px){
+    .cakewrap{margin-top:92px}
+}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="cute.css"></head>
+
+<body data-gift="1" data-hearts>
+
+<!-- SECTION 1: ONEIMG1 TOP, ONEIMG3 BOTTOM -->
+<section class="sec full" id="s1">
+    <div class="veil"></div>
+    <div class="hint">⌄</div>
+</section>
+
+<!-- SECTION 2: MAKE A WISH -->
+<section class="sec" id="s2">
+    <h2 class="ttl">This is your Bithday cake </h2>
+  
+
+    <div class="cakewrap cake" id="ck">
+        <div class="glow"></div>
+        <div class="cn" id="cn"></div>
+        <div class="ly l3"></div>
+        <div class="ly l2"></div>
+        <div class="ly l1"></div>
+        <div class="plate"></div>
+    </div>
+
+    <!-- WISH MESSAGE BOX -->
+    <div class="wish-card">
+        <h3>Make a Birthday Wish 🤍</h3>
+        <p>Close your eyes, make a wish, and let it come true ✨</p>
+        <textarea
+            id="birthdayWish"
+            placeholder="Type your birthday wish here... 💌"
+            maxlength="300"
+        ></textarea>
+        <div class="wish-note">Your wish, your little secret 🤍</div>
+    </div>
+
+    <button class="btn" id="blow">Blow the candles 💨</button>
+    <div id="wish"></div>
+    <div class="hint">⌄</div>
+</section>
+
+<!-- SECTION 3: EXISTING ONEIMG2 PHOTO -->
+<section class="sec full" id="s3">
+    <div class="veil"></div>
+    <div class="hint">⌄</div>
+</section>
+
+<!-- SECTION 4: EXISTING BIRTHDAY MESSAGE -->
+<section class="sec" id="s4">
+    <div class="d" style="top:9%;left:8%">♡</div>
+    <div class="d" style="top:16%;right:9%;animation-delay:1s">✦</div>
+    <div class="d" style="bottom:18%;left:10%;animation-delay:2s">✦</div>
+    <div class="d" style="bottom:12%;right:8%;animation-delay:.5s">♡</div>
+
+    <div class="letter" id="letter">
+        <div class="rv l">
+            <div class="pol2">
+                <img src="2.jpeg" alt="Surya">
+            </div>
+        </div>
+
+        <div class="card rv r">
+            <h2>Happy Birthday, My Man!!! 🤍</h2>
+
+            <p>I think this is also my <span class="hl">second birthday</span>, because I’m very happy today… And first, I really want to thank your Amma for giving me <span class="hl">a diamond like you</span>. I feel so lucky to have you in my life. As usual, my one and only wish for you is… <span class="hl">always be happy with me</span>, your family and your friends. Unna suthi irukura ellararaium ni happy and saft ahh pathuko. Because we are really lucky to have you in our lives.</p>
+
+            <p>Veetuku oru nalla paiyan-ah, enakku oru nalla man-ah, un friends-ku oru nalla friend-ah ni irrukum. Adhukku mela, bad habits edhuvum illama, manasu ku enthu nallathu nu thonutho atha ni pannum. Un life-la nee ninaikira ellame nalla padiya nadakkanum. Nalla grow aagu, and eppovume nee <span class="hl">NEE-ah iru</span>. Yarukkagavum, edhukkagavum unna nee maathikadha. Because being yourself is one of the best things about you… and honestly, <span class="hl">that’s what I love the most</span>.</p>
+
+            <p>Once again, Happy Birthday, <span class="hl">my thanga pillaaaa</span>! Always keep smiling, always stay happy, and always be the same Surya I know. <span class="hl">Love you so muchhh!!!</span></p>
+        </div>
+    </div>
+</section>
+
+<div id="lb"></div>
+
+<script src="giftcommon.js"></script>
+
+<script>
+/* ===== EDIT HERE ===== */
+const IMG1 = "oneimg1";
+const IMG1_SECOND = "oneimg3";
+const IMG2 = "oneimg2";
+/* ===================== */
+
+const $ = s => document.querySelector(s);
+
+/* SECTION 1: TWO LANDSCAPE PHOTOS, TOP AND BOTTOM */
+const section1 = $("#s1");
+
+[IMG1, IMG1_SECOND].forEach(filename => {
+    const e = loadImg(filename, "photo");
+    e.className = "bg";
+    section1.insertBefore(e, section1.querySelector(".veil"));
+});
+
+/* SECTION 3: SAME EXISTING PHOTO */
+const img2 = loadImg(IMG2, "photo");
+img2.className = "bg";
+$("#s3").prepend(img2);
+
+/* STARS */
+for(let i=0;i<34;i++){
+    const s=document.createElement("i");
+    s.className="star";
+    s.style.cssText=`left:${Math.random()*100}%;top:${Math.random()*100}%;animation-delay:${Math.random()*3}s`;
+    $("#s2").appendChild(s);
+}
+
+/* CANDLES */
+let lit=5;
+const birthdayWishInput = document.getElementById("birthdayWish");
+
+for(let i=0;i<5;i++){
+    const c=document.createElement("div");
+    c.className="c";
+    c.innerHTML='<div class="f"></div><div class="hit"></div>';
+    c.onclick=()=>snuff(c);
+    $("#cn").appendChild(c);
+}
+
+function snuff(c){
+    if(c.classList.contains("out"))return;
+    c.classList.add("out");
+
+    const p=document.createElement("div");
+    p.className="puff";
+    c.appendChild(p);
+
+    if(--lit===0){
+        $("#ck").classList.add("dim");
+
+        /* Keep the typed wish inside the box only */
+        $("#wish").textContent = "";
+
+        fire();
+        pulseNext();
+    }
+}
+
+$("#blow").onclick=()=>{
+    [...document.querySelectorAll(".c")].forEach(
+        (c,i)=>setTimeout(()=>snuff(c),i*260)
+    );
+};
+
+fixImgs(".pol2 img");
+onView($("#letter"),fire);
+</script>
+
+<script src="cute.js"></script></body>
+</html>
+

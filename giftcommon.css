@@ -1,0 +1,14 @@
+#fx{position:fixed;inset:0;pointer-events:none;z-index:300}
+html{-webkit-tap-highlight-color:transparent}
+.gnav{position:fixed;left:0;right:0;bottom:calc(12px + env(safe-area-inset-bottom,0px));display:flex;justify-content:center;gap:10px;z-index:400;pointer-events:none}
+.gnav a{pointer-events:auto;padding:11px 22px;border-radius:30px;font:600 12px Manrope,Arial,sans-serif;letter-spacing:1.5px;text-decoration:none;color:#4A1F3A;background:#EC5F8C;border:1px solid #EC5F8C;box-shadow:0 0 15px rgba(255,160,190,.45);transition:.3s}
+.gnav a:hover{background:#FFB6CB;color:#FFF3F6}
+.gnav a:active{transform:scale(.95)}
+.gnav a.back{background:rgba(255,243,246,.88);color:#E0527F;border:1px solid #E0527F;box-shadow:none}
+.gnav a.back:hover{background:#E0527F;color:#FFF3F6}
+.gnav a.pulse{animation:gp 1.2s infinite}
+@keyframes gp{50%{transform:scale(1.1);box-shadow:0 0 28px #FFB6CB}}
+
+/* phone tap targets */
+.gnav a{min-height:44px;display:inline-flex;align-items:center;justify-content:center;white-space:nowrap;-webkit-tap-highlight-color:transparent}
+@media(max-width:380px){.gnav a{padding:11px 16px;font-size:11px;letter-spacing:1px}}

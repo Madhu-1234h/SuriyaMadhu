@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"><meta name="theme-color" content="#FFF3F6">
+
+    <title>A Little Surprise 🤍</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            min-height: 100dvh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background:
+                radial-gradient(circle at 20% 20%, #F6D6E0 0%, transparent 28%),
+                radial-gradient(circle at 80% 80%, #E8A0B8 0%, transparent 25%),
+                #FFF7F0;
+
+            font-family: "Manrope", Arial, sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Soft background glow */
+        body::before {
+            content: "";
+            position: absolute;
+            width: 350px;
+            height: 350px;
+            background: #F6D6E0;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.35;
+            top: -120px;
+            left: -100px;
+        }
+
+        body::after {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: #E8A0B8;
+            border-radius: 50%;
+            filter: blur(100px);
+            opacity: 0.2;
+            bottom: -100px;
+            right: -80px;
+        }
+
+        /* Cute doodles */
+        .doodle {
+            position: absolute;
+            color: #B8758D;
+            opacity: 0.35;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .d1 {
+            top: 12%;
+            left: 10%;
+            font-size: 30px;
+            transform: rotate(-15deg);
+        }
+
+        .d2 {
+            top: 20%;
+            right: 12%;
+            font-size: 25px;
+            transform: rotate(15deg);
+        }
+
+        .d3 {
+            bottom: 15%;
+            left: 13%;
+            font-size: 27px;
+        }
+
+        .d4 {
+            bottom: 20%;
+            right: 10%;
+            font-size: 32px;
+            transform: rotate(-10deg);
+        }
+
+        .d5 {
+            top: 8%;
+            right: 35%;
+            font-size: 18px;
+        }
+
+        .d6 {
+            bottom: 10%;
+            left: 40%;
+            font-size: 20px;
+        }
+
+        /* Main card */
+        .container {
+            width: 90%;
+            max-width: 430px;
+
+            background: #5A3E36;
+
+            padding: 38px 28px 32px;
+
+            border-radius: 30px;
+
+            text-align: center;
+
+            position: relative;
+            z-index: 5;
+
+            box-shadow:
+                0 25px 60px rgba(90, 62, 54, 0.22),
+                0 8px 20px rgba(90, 62, 54, 0.12);
+
+            animation: cardAppear 1s ease;
+        }
+
+        @keyframes cardAppear {
+            from {
+                opacity: 0;
+                transform: translateY(25px) scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Photo */
+        .photo-wrapper {
+            display: inline-block;
+            padding: 6px;
+            background: #FFFFFF;
+            border-radius: 50%;
+
+            box-shadow:
+                0 0 0 6px #E8A0B8,
+                0 10px 25px rgba(0, 0, 0, 0.15);
+
+            margin-bottom: 25px;
+        }
+
+        .photo {
+            width: 145px;
+            height: 145px;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            display: block;
+
+            /* Original photo colour */
+            filter: none;
+        }
+
+        /* Question */
+        h2 {
+            color: #FFF7F0;
+            font-size: 23px;
+            font-weight: 600;
+
+            margin-bottom: 28px;
+
+            letter-spacing: 0.2px;
+        }
+
+        /* Buttons */
+        .buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+
+            position: relative;
+            min-height: 55px;
+        }
+
+        button {
+            border: none;
+            padding: 13px 30px;
+
+            border-radius: 30px;
+
+            font-size: 15px;
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+        }
+
+        /* YES */
+        #yesBtn {
+            background: #F6D6E0;
+            color: #5A3E36;
+
+            box-shadow: 0 7px 18px rgba(0, 0, 0, 0.15);
+        }
+
+        #yesBtn:hover {
+            transform: translateY(-3px) scale(1.04);
+            background: #FFFFFF;
+
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        /* NO */
+        #noBtn {
+            background: #7A574C;
+            color: #FFF7F0;
+
+            box-shadow: 0 7px 18px rgba(0, 0, 0, 0.12);
+
+            position: relative;
+        }
+
+        #noBtn:hover {
+            background: #6B4B41;
+        }
+
+        /* Falling hearts */
+        .heart {
+            position: fixed;
+
+            top: -30px;
+
+            font-size: 20px;
+
+            pointer-events: none;
+
+            z-index: 100;
+
+            animation: fall linear forwards;
+        }
+
+        @keyframes fall {
+            0% {
+                transform:
+                    translateY(-30px)
+                    rotate(0deg)
+                    scale(0.8);
+
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            100% {
+                transform:
+                    translateY(110vh)
+                    rotate(360deg)
+                    scale(1.2);
+
+                opacity: 0;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 500px) {
+
+            .container {
+                width: 88%;
+                padding: 32px 22px 28px;
+                border-radius: 27px;
+            }
+
+            .photo {
+                width: 125px;
+                height: 125px;
+            }
+
+            h2 {
+                font-size: 20px;
+            }
+
+            button {
+                padding: 12px 26px;
+                font-size: 14px;
+            }
+
+            .d1 {
+                left: 5%;
+            }
+
+            .d2 {
+                right: 5%;
+            }
+
+            .d3 {
+                left: 6%;
+            }
+
+            .d4 {
+                right: 5%;
+            }
+        }
+    </style>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>/* LOVE-OVERRIDE */
+
+body{background:radial-gradient(circle at 15% 15%,rgba(236,95,140,.38) 0,transparent 40%),radial-gradient(circle at 85% 88%,rgba(255,160,185,.55) 0,transparent 42%),#FFF3F6!important;font-family:Manrope,Arial,sans-serif!important}
+body::before{background:#EC5F8C!important;opacity:.28!important}
+body::after{background:#E0527F!important;opacity:.4!important}
+.doodle{color:#E0527F!important;opacity:.7!important;text-shadow:0 0 15px #FFB6CB}
+.d2,.d5{color:#E0A63D!important}.d3{color:#FFB6CB!important}
+.container{background:#FFFFFF!important;border:1px solid rgba(236,95,140,.75);box-shadow:0 0 34px rgba(236,95,140,.45),0 25px 60px rgba(0,0,0,.75)!important}
+.photo-wrapper{background:#FFFFFF!important;box-shadow:0 0 0 3px #E0527F,0 0 22px rgba(255,160,190,.6)!important}
+h2{color:#4A1F3A!important;font-family:'Cormorant Garamond',Georgia,serif!important;font-style:italic;font-weight:600!important;font-size:clamp(24px,6.6vw,30px)!important;line-height:1.2}
+html{-webkit-text-size-adjust:100%;-webkit-tap-highlight-color:transparent}
+button{touch-action:manipulation}
+button{font-family:Manrope,Arial,sans-serif!important}
+#yesBtn{background:#EC5F8C!important;color:#4A1F3A!important;box-shadow:0 0 15px rgba(255,160,190,.5)!important}
+#yesBtn:hover{background:#FFB6CB!important;color:#FFF3F6!important}
+#noBtn{background:#E0527F!important;color:#4A1F3A!important;box-shadow:none!important}
+#noBtn:hover{background:#962750!important}
+
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="cute.css"></head>
+
+<body>
+
+    <!-- Background doodles -->
+    <div class="doodle d1">♡</div>
+    <div class="doodle d2">✦</div>
+    <div class="doodle d3">♡</div>
+    <div class="doodle d4">✧</div>
+    <div class="doodle d5">♡</div>
+    <div class="doodle d6">✦</div>
+
+
+    <!-- Main Card -->
+    <div class="container">
+
+        <div class="photo-wrapper">
+            <img
+                src="bubududu.jpg"
+                alt="Cute Photo"
+                class="photo"
+            >
+        </div>
+
+        <h2>Do you want to open? 🤍</h2>
+
+        <div class="buttons">
+
+            <button id="yesBtn">
+                YES 🤍
+            </button>
+
+            <button id="noBtn">
+                NO
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        const yesBtn = document.getElementById("yesBtn");
+        const noBtn = document.getElementById("noBtn");
+
+
+        /* =========================
+           NO BUTTON - MOVE AWAY
+        ========================= */
+
+        function moveNoButton() {
+
+            const maxX = window.innerWidth - noBtn.offsetWidth - 20;
+            const maxY = window.innerHeight - noBtn.offsetHeight - 20;
+
+            const randomX = Math.max(
+                10,
+                Math.random() * maxX
+            );
+
+            const randomY = Math.max(
+                10,
+                Math.random() * maxY
+            );
+
+            noBtn.style.position = "fixed";
+
+            noBtn.style.left = randomX + "px";
+            noBtn.style.top = randomY + "px";
+
+            noBtn.style.zIndex = "50";
+        }
+
+
+        /* Desktop */
+        noBtn.addEventListener("mouseenter", moveNoButton);
+
+
+        /* Mobile */
+        noBtn.addEventListener("touchstart", function(e) {
+
+            e.preventDefault();
+
+            moveNoButton();
+
+        });
+
+
+        /* Extra protection */
+        noBtn.addEventListener("click", function(e) {
+
+            e.preventDefault();
+
+            moveNoButton();
+
+        });
+
+
+        /* =========================
+           YES BUTTON
+        ========================= */
+
+        yesBtn.addEventListener("click", function() {
+
+            createHearts();
+
+            setTimeout(function() {
+
+                window.location.href = "next.html";
+
+            }, 2500);
+
+        });
+
+
+        /* =========================
+           FALLING HEARTS
+        ========================= */
+
+        function createHearts() {
+
+            const hearts = [
+                "♡",
+                "♥",
+                "♡",
+                "♥",
+                "♡"
+            ];
+
+            for (let i = 0; i < 100; i++) {
+
+                const heart = document.createElement("div");
+
+                heart.classList.add("heart");
+
+                heart.innerHTML =
+                    hearts[Math.floor(Math.random() * hearts.length)];
+
+                heart.style.left =
+                    Math.random() * 100 + "vw";
+
+                heart.style.fontSize =
+                    (12 + Math.random() * 20) + "px";
+
+                heart.style.animationDuration =
+                    (2 + Math.random() * 3) + "s";
+
+                heart.style.animationDelay =
+                    Math.random() * 1.5 + "s";
+
+                /*
+                   Pink + white hearts
+                */
+
+                heart.style.color = ["#E0527F","#FFB6CB","#FFB6CB","#A8559B","#E0527F"][Math.floor(Math.random()*5)]; heart.style.textShadow = "0 0 15px #FFB6CB";
+
+                document.body.appendChild(heart);
+
+
+                setTimeout(function() {
+                    heart.remove();
+                }, 6000);
+
+            }
+
+        }
+
+    </script>
+
+<script src="cute.js"></script></body>
+</html>
